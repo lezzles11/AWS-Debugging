@@ -14,11 +14,11 @@ const BugRoutes = require("./routes/bugRoutes");
 
 const result = dotenv.config();
 
-if (result.error) {
-  throw result.error;
-}
+// if (result.error) {
+//   throw result.error;
+// }
 
-console.log(result.parsed);
+// console.log(result.parsed);
 const PORT = process.env.PORT;
 let bugService = new BugService(knex);
 let bugRouter = new BugRoutes(bugService);
