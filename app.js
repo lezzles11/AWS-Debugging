@@ -165,6 +165,10 @@ app.get("/debug", (request, response) => {
 app.get("/error", (request, response) => {
   response.render("error");
 });
+app.get("/logout", function (req, res) {
+  req.logout();
+  res.redirect("/");
+});
 
 app.use("/", bugRouter.router());
 
