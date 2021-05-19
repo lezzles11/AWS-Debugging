@@ -1,0 +1,220 @@
+<div class="jumbotron">
+  <h1 class="display-4">Problem Solving Tool</h1>
+  <p class="lead">
+    A simple application that helps users track of their
+    bugs; created using JQuery and getBootstrap
+  </p>
+  <p class="card-text">
+    1. While coding, track your problems by filling in the
+    form below.
+    <br />
+    2. Update form contents by pressing on the table row
+  </p>
+</div>
+<div class="container">
+  <!-- Beginning of Form -->
+  <div class="card">
+    <div class="card-body">
+      <form
+        method="post"
+        action="/api/bugs"
+        id="debuggingForm"
+        class="debuggingForm text-center"
+      >
+        <p class="h4 mb-4">Problem</p>
+        <input
+          class="problem form-control mb-4"
+          placeholder="Problem"
+          type="text"
+          name="problem"
+        />
+        <input
+          placeholder="What should be happening?"
+          class="whatshouldbe form-control mb-4"
+          type="text"
+          name="whatshouldbe"
+        />
+        <input
+          type="text"
+          class="form-control mb-4"
+          placeholder="What is actually happening?"
+          name="whatactuallyis"
+        />
+
+        <input
+          type="text"
+          class="hypothesis form-control mb-4"
+          placeholder="Hypothesis"
+          name="hypothesis"
+        />
+        <input
+          class="plan form-control mb-4"
+          type="text"
+          placeholder="Plan"
+          name="plan"
+        />
+        <br />
+        <input
+          type="submit"
+          class="btn btn-outline-dark waves-effect"
+          value="submit"
+        />
+        <input
+          type="reset"
+          class="btn btn-outline-dark waves-effect"
+          value="clear"
+          class="clear"
+        />
+      </form>
+    </div>
+  </div>
+  <!-- End of Form -->
+  <br />
+
+  <!-- Table -->
+  <section id="debuggingTable">
+    <table
+      id="table"
+      class="table table-bordered border-primary"
+    >
+      <thead>
+        <tr>
+          <th scope="col">Problem</th>
+          <th scope="col">What should be happening?</th>
+          <th scope="col">What is happening?</th>
+          <th scope="col">Hypothesis</th>
+          <th scope="col">Plan</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr class="eachRow" id="row-0">
+          <td>Data not being added to table</td>
+          <td>
+            On submit, I should see the data in the
+            console.log, then it then should be added to the
+            table here
+          </td>
+          <td>
+            I have the form and method, but on submit,
+            nothing occurs
+          </td>
+          <td>
+            variable names, nothing ever works for me
+          </td>
+          <td>
+            Check id names, check that the JQuery
+            documentation for submit event
+          </td>
+        </tr>
+        <tr class="eachRow" id="row-1">
+          <td>Data not rendering correctly</td>
+          <td>Table should be print out text</td>
+          <td>
+            Table is printing out [HTML HTMLInputElement]
+          </td>
+          <td>
+            Is syntax correct? What does the example say?
+          </td>
+          <td>
+            Check that I have the syntax right (added the
+            .value at the end to grab input value)
+          </td>
+        </tr>
+        <tr class="eachRow" id="row-2">
+          <td>
+            Update form is being so weirddd why is this not
+            working
+          </td>
+          <td>
+            When I click on the row, it should render onto
+            the table
+          </td>
+          <td>
+            Upon click, the row renders onto the form, but
+            on submit, nothing happens
+          </td>
+          <td>
+            Did I add the syntax for update form? Where is
+            the row-id coming from?
+          </td>
+          <td>
+            Check that I have the syntax for update form,
+            make sure that I can console.log each value of
+            the input
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <!-- End of Table -->
+
+  <!-- Update Form -->
+
+  <div class="card">
+    <div class="card-body">
+      <div id="updateDebugging" class="text-center">
+        <form
+          id="updateDebuggingForm"
+          class="debuggingForm"
+        >
+          <p class="h4 mb-4">Update Problem</p>
+          <input
+            class="problemTwo form-control mb-4"
+            placeholder="Problem"
+            type="text"
+            name="updateProblem"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            placeholder="What should be happening?"
+            name="updateWhatShouldBe"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            placeholder="What is actually happening?"
+            name="updateWhatActuallyIs"
+          />
+
+          <input
+            type="text"
+            class="form-control mb-4"
+            placeholder="Hypothesis"
+            name="updateHypothesis"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            placeholder="Plan"
+            name="updatePlan"
+          />
+          <div id="updateFormId"></div>
+
+          <br />
+          <input
+            type="submit"
+            class="btn btn-outline-dark waves-effect"
+            value="submit"
+          />
+          <input
+            type="reset"
+            class="btn btn-outline-dark waves-effect"
+            value="clear"
+            class="clear"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Update Form -->
+</div>
+<!-- Footer -->
+<br />
+
+<form id="sampleForm">
+  <input name="first" type="text" />
+  <button type="submit">Submit</button>
+</form>
+<script src="debug.js"></script>
