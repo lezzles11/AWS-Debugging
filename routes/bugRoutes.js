@@ -27,8 +27,17 @@ class BugRouter {
     router.post("/api/bugs", this.post.bind(this));
     router.put("/api/bugs/:id", this.put.bind(this));
     router.delete("/api/bugs/:id", this.delete.bind(this));
+    // #TODO: Will need to finish this
+    // router.get("/debug/:id", this.getUsersBugs.bind(this));
     return router;
   }
+  //   getUsersBugs(request, response) {
+  //     let id = request.params.id;
+  //       this.getUsersBugs( id ).then( ( userBugs ) => {
+
+  //       response.json(userBugs);
+  //     });
+  //   }
   getAll(request, response) {
     this.bugService.getAll().then((allBugs) => {
       response.json(allBugs);

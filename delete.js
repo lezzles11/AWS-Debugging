@@ -1,3 +1,28 @@
+/**********************************************
+ *
+ * ==================================
+ * 
+ * This Works
+ ***********************************************/
+
+app.get(
+  "/auth/facebook",
+  passportFunctions.authenticate("facebook", {
+    scope: ["email"],
+  })
+);
+app.get(
+  "/auth/facebook/callback",
+  passportFunctions.authenticate("facebook", {
+    successRedirect: "/debug",
+    failureRedirect: "/error",
+  })
+);
+
+
+
+
+
 // After user authenticates, redirect to /
 // app.get(
 //   "/auth/facebook/callback",

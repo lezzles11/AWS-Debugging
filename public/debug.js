@@ -35,7 +35,7 @@ $(() => {
    * Get notes -
    * ==================================
    ***********************************************/
-  function getNotes() {
+  function getBugs() {
     axios
       .get(`api/bugs`)
       .then((object) => {
@@ -45,7 +45,7 @@ $(() => {
         console.log(error);
       });
   }
-  getNotes();
+  getBugs();
 
   /**********************************************
    *
@@ -83,7 +83,7 @@ $(() => {
       })
       .then(() => {
         console.log("posted");
-        getNotes();
+        getBugs();
       })
       .catch((error) => {
         console.log("Error", error);
@@ -179,7 +179,7 @@ $(() => {
       .then(() => {
         console.log("Frontend edited");
 
-        getNotes();
+        getBugs();
       })
       .catch((error) => {
         console.log("error", error);
@@ -198,7 +198,7 @@ $(() => {
       .delete(`/api/bugs/${id}`)
       .then(() => {
         console.log("deleted");
-        getNotes();
+        getBugs();
       })
       .catch((error) => {
         console.log("error", error);
