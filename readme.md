@@ -1,4 +1,3 @@
-![Alt Text](https://www.dropbox.com/s/4k78c8vbepnxfus/passportlogin.gif?raw=1)
 
 
 ## Variables
