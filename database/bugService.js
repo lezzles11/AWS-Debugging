@@ -70,14 +70,10 @@ class BugService {
   // adding bug
   add(bug) {
     return this.knex(TABLE_NAME)
-      .returning("id")
-      .then((id) => {
-        console.log("returning id", id);
-      })
-      .max("id")
+      .count("id")
       .then((getCount) => {
         console.log("get count", getCount);
-        let currCount = parseInt(getCount[0].max);
+        let currCount = parseInt(getCount[0].count);
         console.log(currCount);
         return currCount;
       })
